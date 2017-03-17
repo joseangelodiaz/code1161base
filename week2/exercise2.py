@@ -13,7 +13,7 @@ import string
 def getLetter(index):
     """Allah Ahkbar."""
     alphabet = string.ascii_lowercase + " "
-    return alphabet(index)
+    return alphabet[index]
 
 
 def week2exersise2():
