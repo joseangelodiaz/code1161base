@@ -152,11 +152,13 @@ def loops_4():
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     ]
     """
-    number_square = []
-    for i in range(10):
-        number_square.append(range(10))
-
-    return number_square
+    columns = []
+    for x in range(10):
+        rows = []
+        for y in range(10):
+            rows.append(str(y))
+        columns.append(rows)
+    return columns
 
 
 def loops_5():
@@ -216,7 +218,7 @@ def loops_6():
     for i in range(10):
         row = []
         for j in range(i + 1):
-            row.append(j)
+            row.append(str(j))
         the_wedge.append(row)
     return the_wedge
 
