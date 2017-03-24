@@ -245,17 +245,17 @@ def loops_7():
     lots of diagrams!
     """
     columns = []
-    for x in range(5):
+    for y in range(5):
         rows = []
-        for y in range(9):
-            if abs(y-4) <= x:
+        for x in range(9):
+            if abs(x-4) <= y:
                 rows.append('*')
             else:
                 rows.append(' ')
-            columns.append(rows)
+        columns.append(rows)
 
+    print(columns)
     return columns
-    return rows
 
 
 def lp(some_kind_of_list, exercise_name):
