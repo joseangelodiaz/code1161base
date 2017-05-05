@@ -28,7 +28,19 @@ def success_is_relative():
     # this depends on excecution context. Take a look at your CWD and remember
     # that it changes.
     # print(path, CWD)
-    pass
+    try:
+        mode = "r"
+        file_path = "../week1/pySuccessMessage.json"
+        pySuccessMessage.json = open(file_path, mode)
+        r = pySuccessMessage.read()
+        jso1_data = json.loads(r)
+        response = r["message"]
+        message = "Python and requests are working!"
+        print(response)
+        pySuccessMessage.json.close()
+    except Exception as e:
+        print(e)
+        return False
 
 
 def get_some_details():
@@ -50,6 +62,7 @@ def get_some_details():
     json_data = open(LOCAL + "/lazyduck.json").read()
 
     data = json.loads(json_data)
+    print (data["results"])
     return {"lastName":       None,
             "password":       None,
             "postcodePlusID": None
@@ -60,7 +73,8 @@ def wordy_pyramid():
     """Make a pyramid out of real words.
 
     There is a random word generator here: http://www.setgetgo.com/randomword/
-    The only argument that the generator takes is the length of the word.
+    The only argument thatresults = ["name", "lsat"]
+    results = ["login", "password"] the generator takes is the length of the word.
     Use this and the requests library to make a word pyramid. The shortest
     words they have are 3 letters long and the longest are 20. The pyramid
     should step up by 2 letters at a time.
@@ -135,7 +149,7 @@ def diarist():
 
 
 if __name__ == "__main__":
-    print([len(w) for w in wordy_pyramid()])
     print(get_some_details())
+    print([len(w) for w in wordy_pyramid()])
     print(wunderground())
     print(diarist())

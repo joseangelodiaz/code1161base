@@ -93,12 +93,10 @@ def not_number_rejector(message):
     while True:
         try:
             input_number = int(raw_input(message))
-            print ("{} a number indeed".format(input_number))
-            return(input_number)
+            print("Thanks! {} looks good.".format(input_number))
+            return input_number
         except Exception as e:
-            print ("{} is a bad number and will be thrown out".format(e))
-
-    return(input_number)
+            print("err, you wot, try again ({})".format(e))
 
 
 def super_asker(low, high):
@@ -115,7 +113,8 @@ def super_asker(low, high):
             if low < input_number < high:
                 print("{}is right.".formwat(input_number))
             else:
-                print("Sorry, {input} is out of range".format(input=input_number))
+                print("Sorry, {input} is out of range".format(input=
+                                                              input_number))
         except Exception as e:
             print ("try,again, that's not a number ({})".format(e))
 
