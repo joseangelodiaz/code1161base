@@ -55,7 +55,6 @@ def get_some_details():
             "password":       data["results"][0]["login"]["password"],
             "postcodePlusID": data["results"][0]["location"]["postcode"] +
             int(data["results"][0]["id"]["value"])
-
             }
 
 
@@ -133,7 +132,6 @@ def wunderground():
             "latitude":        obs['observation_location']['latitude'],
             "longitude":       obs['observation_location']['longitude'],
             "local_tz_offset": obs['local_tz_offset']}
-    pass
 
 
 def diarist():
@@ -166,4 +164,4 @@ if __name__ == "__main__":
     print(get_some_details())
     print([len(w) for w in wordy_pyramid()])
     print(wunderground())
-print(diarist())
+    print(diarist())
